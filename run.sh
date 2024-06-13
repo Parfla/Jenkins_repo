@@ -6,4 +6,5 @@ echo "this is txt file 3" > 3.txt
 echo "this is txt file 4" > 4.txt
 echo "this is txt file 5" > 5.txt
 echo "this is txt file 6" > 6.txt
+echo "this is txt file 7" > 7.txt
 zip archive.zip *.txt
