@@ -1,17 +1,18 @@
+
 pipeline {
     agent any
     stages {
-        stage ('clean') {
-            steps {
+        stage ('clean the workspace'){
+            steps{
                 cleanWs()
-                git url: 'https://github.com/agray998/jenkins-freestyle-project', branch: 'main'
             }
         }
-        stage ('Run script') {
+        stage('Run Script') {
             steps {
-                sh "sh run.sh"
+                sh "run.sh"
             }
         }
+
         stage ('Generate artifacts') {
             steps {
                 sh '''
@@ -20,10 +21,10 @@ pipeline {
                 '''
             }
         }
-    
-    post {
-        always {
+    }
+    post{
+        always{
             archiveArtifacts artifacts: '*.txt', followSymlinks: false
         }
     }
-
+}
